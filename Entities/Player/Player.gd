@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 75
+export var speed = 100
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -13,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
+func _physics_process(delta):
 	var direction = Vector2()
 	if Input.is_key_pressed(KEY_D):
 		direction.x += 1
@@ -24,5 +24,8 @@ func _physics_process(_delta):
 	if Input.is_key_pressed(KEY_W):
 		direction.y -= 1
 	direction = direction.normalized()
-	move_and_slide(speed * direction)
+	if Input.is_key_pressed(KEY_SHIFT):
+		move_and_slide(2 * speed * direction)
+	else:
+		move_and_slide(speed * direction)
 	
