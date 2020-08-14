@@ -6,6 +6,6 @@ current controls:
 
 wasd - moves
 
-space - creates a tile you can walk on to the right of the character
+L/R click - creates obstacle/free_space, resp.
 
-j - creates a tile you cannot walk on to the right of the character
+(no idea what .import is)
